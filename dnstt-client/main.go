@@ -36,7 +36,7 @@
 //	-utls '3*Firefox,2*Chrome,1*iOS'
 //	-utls Firefox
 //	-utls none
-package main
+package dnsttclient
 
 import (
 	"context"

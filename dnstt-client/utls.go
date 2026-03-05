@@ -1,4 +1,4 @@
-package main
+package dnsttclient
 
 // Support code for TLS camouflage using uTLS.
 
