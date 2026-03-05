@@ -1,4 +1,4 @@
-module www.bamsoftware.com/git/dnstt.git
+module github.com/UnboundTechCo/dnstt
 
 go 1.24
 
