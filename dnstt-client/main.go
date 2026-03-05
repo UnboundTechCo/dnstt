@@ -95,11 +95,11 @@ func readKeyFromFile(filename string) ([]byte, error) {
 	return noise.ReadKey(f)
 }
 
-// sampleUTLSDistribution parses a weighted uTLS Client Hello ID distribution
+// SampleUTLSDistribution parses a weighted uTLS Client Hello ID distribution
 // string of the form "3*Firefox,2*Chrome,1*iOS", matches each label to a
 // utls.ClientHelloID from utlsClientHelloIDMap, and randomly samples one
 // utls.ClientHelloID from the distribution.
-func sampleUTLSDistribution(spec string) (*utls.ClientHelloID, error) {
+func SampleUTLSDistribution(spec string) (*utls.ClientHelloID, error) {
 	weights, labels, err := parseWeightedList(spec)
 	if err != nil {
 		return nil, err
@@ -418,7 +418,7 @@ Known TLS fingerprints for -utls are:
 		os.Exit(1)
 	}
 
-	utlsClientHelloID, err := sampleUTLSDistribution(utlsDistribution)
+	utlsClientHelloID, err := SampleUTLSDistribution(utlsDistribution)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "parsing -utls: %v\n", err)
 		os.Exit(1)
